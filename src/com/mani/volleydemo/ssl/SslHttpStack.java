@@ -31,7 +31,6 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPatch;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -155,10 +154,10 @@ public class SslHttpStack implements HttpStack {
             }
             // Added in source code of Volley libray.
             case Method.PATCH: {
-            	HttpPatch patchRequest = new HttpPatch(request.getUrl());
-            	patchRequest.addHeader(HEADER_CONTENT_TYPE, request.getBodyContentType());
-                setEntityIfNonEmptyBody(patchRequest, request);
-                return patchRequest;
+//            	HttpPatch patchRequest = new HttpPatch(request.getUrl());
+//            	patchRequest.addHeader(HEADER_CONTENT_TYPE, request.getBodyContentType());
+//                setEntityIfNonEmptyBody(patchRequest, request);
+                return null;
             }
             default:
                 throw new IllegalStateException("Unknown request method.");
