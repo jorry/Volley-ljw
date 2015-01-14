@@ -70,7 +70,7 @@ import com.mani.volleydemo.util.BitmapUtil;
 public class NetworkImageActivity extends Activity {
 
 	private Button mTrigger;
-	private RequestQueue mVolleyQueue;
+
 	private ListView mListView;
 	private ImageView mImageView1;
 	private ImageView mImageView2;
@@ -81,7 +81,7 @@ public class NetworkImageActivity extends Activity {
 	private List<DataModel> mDataList;
 	
 	private ImageLoader mImageLoader;
-	
+	private RequestQueue mVolleyQueue;
 	private final String TAG_REQUEST = "MY_TAG";
 	
 	private class DataModel {
@@ -172,7 +172,6 @@ public class NetworkImageActivity extends Activity {
 		
 		// Initialise Volley Request Queue. 
 		mVolleyQueue = Volley.newRequestQueue(this);
-
 		int max_cache_size = 1000000;
 		mImageLoader = new ImageLoader(mVolleyQueue, new DiskBitmapCache(getCacheDir(),max_cache_size));
 		
